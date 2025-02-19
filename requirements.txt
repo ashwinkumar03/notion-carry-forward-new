@@ -1,0 +1,5 @@
+notion-client
+python-dotenv
+httpx
+anyio
+certifi
