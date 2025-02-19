@@ -12,8 +12,8 @@ load_dotenv()
 NOTION_TOKEN = os.environ["NOTION_TOKEN"]
 MAIN_DB_ID = os.environ["MAIN_DB_ID"]
 LOG_DB_ID = os.environ["LOG_DB_ID"]
-ASHWIN_ID = os.environ["ASHWIN_ID"]
-QUERIS_ID = os.environ["QUERIS_ID"]
+USER_1_ID = os.environ["USER_1_ID"]
+USER_2_ID = os.environ["USER_2_ID"]
 
 WEEKDAY_TO_STR = {
     0: "Mon", 1: "Tue", 2: "Wed", 3: "Thu", 4: "Fri", 5: "Sat", 6: "Sun"
@@ -35,7 +35,7 @@ TASK_PROPERTIES = [
 def initialize_task_dict() -> Dict:
     """Initialize nested dictionary structure for tasks with person layer."""
     task_dict = {}
-    for person_id in [ASHWIN_ID, QUERIS_ID]:
+    for person_id in [USER_1_ID, USER_2_ID]:
         task_dict[person_id] = {}
         for prop in TASK_PROPERTIES:  # renamed loop variable to avoid shadowing built-ins
             task_dict[person_id][prop] = {
@@ -423,7 +423,7 @@ def main():
         tasks_that_should_go_forward = initialize_task_dict()
         todays_preexisting_tasks = initialize_task_dict()
 
-        for person_id in [ASHWIN_ID, QUERIS_ID]:
+        for person_id in [USER_1_ID, USER_2_ID]:
             print(f"\nProcessing person: {person_id}")
 
             yesterday_results = client.databases.query(
