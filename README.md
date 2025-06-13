@@ -11,3 +11,4 @@ This script automates the process of:
 - Managing work and personal tasks separately
 
 - New commit to keep the action running
+Trigger GitHub Action
