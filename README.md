@@ -14,3 +14,4 @@ This script automates the process of:
 Trigger GitHub Action
 
 - Another dummy commit to reactivate GitHub Actions
+- Dummy change to ensure workflows stay active
